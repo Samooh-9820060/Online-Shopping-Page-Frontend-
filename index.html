@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <title>Samooh Shopping</title>
+</head>
+<body>
+    <div id="page-content">
+        <header>
+            <nav>
+                <a href="index.html" class="logo">Samooh Shop</a>
+                <input type="checkbox" id="nav-toggle">
+                <label for="nav-toggle" class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </header>    
+        <main>
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Welcome to Samooh Shop</h1>
+                    <p>Discover the best products at unbeatable prices.</p>
+                    <a href="products.html" class="btn">Shop Now</a>
+                </div>
+            </section>
+            <section class="featured-products">
+                <h2>Featured Products</h2>
+                <div class="product-grid">
+                    <div class="product">
+                        <div class="product-image">
+                            <img src="images/Galaxy_Z_Fold_3_5G-removebg-preview.png" alt="Galaxy Z Fold 3 5G">
+                        </div>
+                        <div class="product-details">
+                            <h3>Galaxy Z Fold 3 5G</h3>
+                            <p>Price: $1200.00</p>
+                            <p>Resolution: 1768 x 2208 (374 ppi)</p>
+                            <p>Main Camera: (12MP+12MP+12MP)</p>
+                            <p>Battery: 4400mAh</p>
+                            <button class="btn add-to-cart-btn">Add to Cart</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Galaxy Z Fold 3 5G</h3>
+                            <p>Price: $1200.00</p>
+                        </div>
+                    </div>
+                    <div class="product sale">
+                        <div class="product-image">
+                            <img src="images/Galaxy Z Flip 3.png" alt="Galaxy Z Flip 3 5G">
+                        </div>
+                        <div class="product-details">
+                            <h3>Galaxy Z Flip 3 5G</h3>
+                            <p>Price: $1100.00</p>
+                            <p>Resolution: 2640 x 1080</p>
+                            <p>Main Camera: (12MP+12MP)</p>
+                            <p>Battery: 3300mAh</p>
+                            <button class="btn add-to-cart-btn">Add to Cart</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Galaxy Z Flip 3 5G</h3>
+                            <p>Price: $1100.00</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-image">
+                            <img src="images/Galaxy S23 Ultra.png" alt="Galaxy S23 Ultra">
+                        </div>
+                        <div class="product-details">
+                            <h3>Galaxy S23 Ultra</h3>
+                            <p>Price: $1300.00</p>
+                            <p>Resolution: 1768 x 2208</p>
+                            <p>Main Camera: (108MP+12MP+10MP+10MP)</p>
+                            <p>Battery: 5000mAh</p>
+                            <button class="btn add-to-cart-btn">Add to Cart</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Galaxy S23 Ultra</h3>
+                            <p>Price: $1300.00</p>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-image">
+                            <img src="images/Samsung_Galaxy_A14_5G_Hero_Image.png" alt="Samsung Galaxy A14 5G">
+                        </div>
+                        <div class="product-details">
+                            <h3>Galaxy A14 5G</h3>
+                            <p>Price: $600.00</p>
+                            <p>Resolution: 1600 x 720</p>
+                            <p>Main Camera: (48MP+8MP+5MP+2MP)</p>
+                            <p>Battery: 4600mAh</p>
+                            <button class="btn add-to-cart-btn">Add to Cart</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Samsung Galaxy A14 5G</h3>
+                            <p>Price: $600.00</p>
+                        </div>
+                    </div>
+                    <div class="product sale">
+                        <div class="product-image">
+                            <img src="images/Galaxy M14.png" alt="Galaxy M14">
+                        </div>
+                        <div class="product-details">
+                            <h3>Galaxy M14</h3>
+                            <p>Price: $500.00</p>
+                            <p>Resolution: 2340 x 1080</p>
+                            <p>Main Camera: (48MP+8MP+5MP)</p>
+                            <p>Battery: 6000mAh</p>
+                            <button class="btn add-to-cart-btn">Add to Cart</button>
+                        </div>
+                        <div class="product-info">
+                            <h3>Galaxy M14</h3>
+                            <p>Price: $500.00</p>
+                        </div>
+                    </div>
+                </div>            
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2023 Samooh Shop. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        function navigateWithTransition(event, targetUrl) {
+            event.preventDefault();
+    
+            const pageContent = document.getElementById("page-content");
+            pageContent.style.animation = "fadeOut 0.5s ease-in-out forwards";
+    
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 500);
+        }
+    
+        document.querySelectorAll("nav a").forEach((link) => {
+            const targetUrl = link.getAttribute("href");
+            link.onclick = (event) => navigateWithTransition(event, targetUrl);
+        });
+    </script>
+    
+</body>
+</html>

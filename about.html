@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Samooh Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="page-content">
+        <header>
+            <nav>
+                <a href="index.html" class="logo">Samooh Shop</a>
+                <input type="checkbox" id="nav-toggle">
+                <label for="nav-toggle" class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <section class="about-section">
+                <h2>About Samooh Shop</h2>
+                <p>
+                    Welcome to Samooh shop! We are committed to providing you with the best shopping experience possible. Our online store offers a wide range of products from top brands, all at competitive prices.
+                </p>
+                <p>
+                    We believe in offering our customers the highest quality products and exceptional customer service. Our team is constantly working to improve and expand our product offerings to ensure that we always have the latest and greatest items available for you.
+                </p>
+            </section>
+            <section class="about-section">
+                <h2>Our Mission</h2>
+                <p>
+                    Our mission is to make online shopping easy, fun, and accessible for everyone. We strive to create a seamless and enjoyable shopping experience for our customers by offering a wide variety of products, easy navigation, and top-notch customer service.
+                </p>
+            </section>
+            <section class="about-section">
+                <h2>Why Choose Us</h2>
+                <ul>
+                    <li>Wide selection of products</li>
+                    <li>Competitive prices</li>
+                    <li>High-quality items</li>
+                    <li>Exceptional customer service</li>
+                    <li>Fast and secure shipping</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>Samooh Shop &copy; 2023. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function navigateWithTransition(event, targetUrl) {
+            event.preventDefault();
+    
+            const pageContent = document.getElementById("page-content");
+            pageContent.style.animation = "fadeOut 0.5s ease-in-out forwards";
+    
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 500);
+        }
+    
+        document.querySelectorAll("nav a").forEach((link) => {
+            const targetUrl = link.getAttribute("href");
+            link.onclick = (event) => navigateWithTransition(event, targetUrl);
+        });
+    </script>   
+</body>
+
+</html>

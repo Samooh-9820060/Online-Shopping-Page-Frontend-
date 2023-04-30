@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Samooh Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="page-content">
+        <header>
+            <nav>
+                <a href="index.html" class="logo">Samooh Shop</a>
+                <input type="checkbox" id="nav-toggle">
+                <label for="nav-toggle" class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="contact-section">
+                <h2>Contact Us</h2>
+                <p>If you have any questions, concerns, or feedback, please feel free to contact us using the form below. We'll get back to you as soon as possible.</p>
+
+                <form class="contact-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="number" id="phoneNumber" name="phoneNumber" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>Samooh Shop &copy; 2023. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function navigateWithTransition(event, targetUrl) {
+            event.preventDefault();
+    
+            const pageContent = document.getElementById("page-content");
+            pageContent.style.animation = "fadeOut 0.5s ease-in-out forwards";
+    
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 500);
+        }
+    
+        document.querySelectorAll("nav a").forEach((link) => {
+            const targetUrl = link.getAttribute("href");
+            link.onclick = (event) => navigateWithTransition(event, targetUrl);
+        });
+    </script>
+</body>
+
+</html>
